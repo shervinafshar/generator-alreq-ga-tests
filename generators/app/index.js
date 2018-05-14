@@ -74,6 +74,12 @@ module.exports = class extends Generator {
 		name: 'htmlSrc',
 		message: 'HTML:',
 		store: true		
+	    },
+	    {
+		type: 'editor',
+		name: 'notes',
+		message: 'Notes:',
+		store: true
 	    }
 	];
 
@@ -91,9 +97,10 @@ module.exports = class extends Generator {
 		testTitle: this.config.get('testTitle'),
 		testMainLocale: this.config.get('testMainLocale'),
 		testSrcLocale: this.config.get('testSrcLocale'),
-		cssSrc: this._indent(this.config.get('cssSrc'), 6),
-		htmlSrc: this._indent(this.config.get('htmlSrc'), 6)
-		//	    indent: (text, indent) => this._indent(text, indent) 
+		cssSrc: this.config.get('cssSrc'),
+		htmlSrc: this.config.get('htmlSrc'),
+		notes: this.config.get('notes'),
+		indent: (text, indent) => this._indent(text, indent) 
 	    });
 
 	css: this.fs.copy(

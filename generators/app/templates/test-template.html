@@ -9,14 +9,19 @@
     <link rel="stylesheet" type="text/css" href="css/cosmetic.css" />
     
     <style id="csssrc">
-      <%- cssSrc %>
+      <%- indent(cssSrc, 6) %>
     </style>
     
   </head>
 
   <body>
+
+    <div id="notes" lang="<%= testMainLocale %>">
+      <%= notes %>
+    </div>
+
     <div id="htmlsrc" lang="<%= testSrcLocale %>">
-      <%- htmlSrc %>
+      <%- indent(htmlSrc, 6) %>
     </div>
     
     <div id="sourceCode"></div>
