@@ -83,18 +83,32 @@ module.exports = class extends Generator {
 	});
     }
 
-  writing() {
-    this.fs.copyTpl(
-	this.templatePath('test-template.html'),
-	this.destinationPath(this.config.get('testFilename')),
-	{
-	    testTitle: this.config.get('testTitle'),
-	    testMainLocale: this.config.get('testMainLocale'),
-	    testSrcLocale: this.config.get('testSrcLocale'),
-	    cssSrc: this._indent(this.config.get('cssSrc'), 6),
-	    htmlSrc: this._indent(this.config.get('htmlSrc'), 6)
-//	    indent: (text, indent) => this._indent(text, indent) 
-	})
-  }
+    writing() {
+	testFile: this.fs.copyTpl(
+	    this.templatePath('test-template.html'),
+	    this.destinationPath(this.config.get('testFilename')),
+	    {
+		testTitle: this.config.get('testTitle'),
+		testMainLocale: this.config.get('testMainLocale'),
+		testSrcLocale: this.config.get('testSrcLocale'),
+		cssSrc: this._indent(this.config.get('cssSrc'), 6),
+		htmlSrc: this._indent(this.config.get('htmlSrc'), 6)
+		//	    indent: (text, indent) => this._indent(text, indent) 
+	    });
+
+	css: this.fs.copy(
+	    this.templatePath('css'),
+	    this.destinationPath('css')
+	);
+
+	js: this.fs.copy(
+	    this.templatePath('js'),
+	    this.destinationPath('js')
+	);
+    };
+
+    end() {
+	goodbye: this.log(chalk.blue('Goodbye!'));
+    }
 	 
 };
