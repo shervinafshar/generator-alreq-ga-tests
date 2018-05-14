@@ -1,0 +1,9 @@
+{
+  "generator-node": {
+    "promptValues": {
+      "authorName": "Shervin Afshar",
+      "authorEmail": "shervinafshar@gmail.com",
+      "authorUrl": ""
+    }
+  }
+}

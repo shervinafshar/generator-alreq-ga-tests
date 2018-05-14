@@ -1,0 +1,25 @@
+<!doctype html>
+<html lang="<%= testMainLocale %>">
+  <head>
+    
+    <meta charset="utf-8">
+    <title><%= testTitle %></title>
+    <script type="text/javascript" src="js/source.js"></script>
+    <link rel="stylesheet" type="text/css" href="css/source.css" />
+    <link rel="stylesheet" type="text/css" href="css/cosmetic.css" />
+    
+    <style id="csssrc">
+      <%- cssSrc %>
+    </style>
+    
+  </head>
+
+  <body>
+    <div id="htmlsrc" lang="<%= testSrcLocale %>">
+      <%- htmlSrc %>
+    </div>
+    
+    <div id="sourceCode"></div>
+    <script>showSource()</script>
+  </body>
+</html>
