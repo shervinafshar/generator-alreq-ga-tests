@@ -25,8 +25,7 @@ yo alreq-ga-tests
 
 ## License
 
-unlicense © [Shervin Afshar]()
-
+[GPLv3](https://www.gnu.org/licenses/gpl-3.0.en.html)
 
 [npm-image]: https://badge.fury.io/js/generator-alreq-ga-tests.svg
 [npm-url]: https://npmjs.org/package/generator-alreq-ga-tests
