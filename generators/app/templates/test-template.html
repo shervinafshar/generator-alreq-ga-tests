@@ -17,7 +17,9 @@
   <body>
 
     <div id="notes" lang="<%= testMainLocale %>">
-      <%= notes %>
+      <div class="assertion"><b>Assertion:</b> <%= assertion %></div>
+      <div class="instructions"><b>Instructions:</b> <%= instructions %></div>
+      <div id="ref" lang="<%= testMainLocale %>"><b>References and Comparisons:</b> <%= ref %></div>
     </div>
 
     <div id="htmlsrc" lang="<%= testSrcLocale %>">

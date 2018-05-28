@@ -77,10 +77,23 @@ module.exports = class extends Generator {
 	    },
 	    {
 		type: 'editor',
-		name: 'notes',
-		message: 'Notes:',
+		name: 'assertion',
+		message: 'Assertion:',
+		store: true
+	    },
+	    {
+		type: 'editor',
+		name: 'instructions',
+		message: 'Instructions:',
+		store: true
+	    },
+    	    {
+		type: 'editor',
+		name: 'ref',
+		message: 'Reference comparisons:',
 		store: true
 	    }
+
 	];
 
 	return this.prompt(prompts).then((answers) => {
@@ -99,7 +112,9 @@ module.exports = class extends Generator {
 		testSrcLocale: this.config.get('testSrcLocale'),
 		cssSrc: this.config.get('cssSrc'),
 		htmlSrc: this.config.get('htmlSrc'),
-		notes: this.config.get('notes'),
+		assertion: this.config.get('assertion'),
+		instructions: this.config.get('instructions'),
+		ref: this.config.get('ref'),
 		indent: (text, indent) => this._indent(text, indent) 
 	    });
 
