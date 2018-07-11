@@ -87,6 +87,12 @@ module.exports = class extends Generator {
 		message: 'Instructions:',
 		store: true
 	    },
+	    {
+		type: 'editor',
+		name: 'passCondition',
+		message: 'Test passes if:',
+		store: true
+	    },
     	    {
 		type: 'editor',
 		name: 'ref',
@@ -114,6 +120,7 @@ module.exports = class extends Generator {
 		htmlSrc: this.config.get('htmlSrc'),
 		assertion: this.config.get('assertion'),
 		instructions: this.config.get('instructions'),
+		passCondition: this.config.get('passCondition'),
 		ref: this.config.get('ref'),
 		indent: (text, indent) => this._indent(text, indent) 
 	    });
